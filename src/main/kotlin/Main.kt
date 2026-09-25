@@ -22,5 +22,6 @@ fun changeCouleur(message: String, couleur:String="Bleu"): String {
         "blanc" -> "\u001B[37m"
         else -> "" // pas de couleur si non reconnu
     }
+
     return "$codeCouleur$message$reset"
 }
