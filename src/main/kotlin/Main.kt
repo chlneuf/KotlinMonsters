@@ -1,7 +1,10 @@
 package org.example
 
 import org.example.dresseur.Entraineur
+import org.example.item.Badge
+import org.example.monde.Zone
 import org.example.monstre.EspeceMonstre
+import org.example.monstre.IndividuMonstre
 
 //Dresseur
 var joueur = Entraineur(1,"Sacha",100)
@@ -112,21 +115,104 @@ val especeGalum = EspeceMonstre(
     modVitesse = 12.0,
     modPv = 50.1)
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+val foret = Zone(
+    id = 13,
+    nom = "Forêt",
+    especesMonstres = mutableListOf(especeGalum)
+)
+    val grotte = Zone(
+
+        id = 14,
+    nom = "Grotte",
+    especesMonstres = mutableListOf(especeGalum)
+    )
+
+
+        //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 fun main() {
-/*    println(changeCouleur("Hello","rouge"))
-    println(changeCouleur("World","magenta"))
-    println("Hello ${changeCouleur("my","jaune")} World")
-    println(changeCouleur("Truc","marron"))*/
 
-//    joueur.afficheDetail()
-//    rival.afficheDetail()
+            foret.zoneSuivante = grotte
+            grotte.zonePrecedente = foret
+
+            /*    println(changeCouleur("Hello","rouge"))
+                println(changeCouleur("World","magenta"))
+                println("Hello ${changeCouleur("my","jaune")} World")
+                println(changeCouleur("Truc","marron"))*/
+
+
+
 //    joueur.argents+=50
-//    joueur.afficheDetail()
 
-    println(especeBugsyface.nom)
-}
+
+
+
+            val monstre1 = IndividuMonstre(1, "springleaf", 1500.0, especeSpringleaf)
+            val monstre2 = IndividuMonstre(2, "flamkip", 1500.0, especeFlamkip)
+            val monstre3 = IndividuMonstre(3, "aquamy", 1500.0, especeAquamy)
+
+            monstre1.exp = 2000.0
+            monstre1.pv = -50
+            monstre1.pvMax = 500
+            monstre1.attaque = 60
+            monstre1.id = 0
+            monstre1.nom = "in"
+            monstre1.espece = especeSpringleaf
+            monstre1.entraineur = null
+            monstre1.niveau = 5
+            monstre1.attaque = 69
+            monstre1.défense = 58
+            monstre1.vitesse = 100
+            monstre1.attaqueSpe = 73
+            monstre1.défenseSpe = 71
+            monstre1.pvMax = 138
+            monstre1.potentiel = 10.5
+
+
+            monstre2.exp = 2000.0
+            monstre2.pv = -50
+            monstre2.pvMax = 500
+            monstre2.attaque = 60
+            monstre1.id = 0
+            monstre1.nom = "in"
+            monstre1.espece = especeFlamkip
+            monstre1.entraineur = null
+            monstre1.niveau = 5
+            monstre1.attaque = 69
+            monstre1.défense = 58
+            monstre1.vitesse = 100
+            monstre1.attaqueSpe = 73
+            monstre1.défenseSpe = 71
+            monstre1.pvMax = 138
+            monstre1.potentiel = 10.5
+
+            monstre3.exp = 2000.0
+            monstre3.pv = -50
+            monstre3.pvMax = 500
+            monstre3.attaque = 60
+            monstre1.id = 0
+            monstre1.nom = "in"
+            monstre1.espece = especeAquamy
+            monstre1.entraineur = null
+            monstre1.niveau = 5
+            monstre1.attaque = 69
+            monstre1.défense = 58
+            monstre1.vitesse = 100
+            monstre1.attaqueSpe = 73
+            monstre1.défenseSpe = 71
+            monstre1.pvMax = 138
+            monstre1.potentiel = 10.5
+
+            val badge = Badge(
+                1,
+                "Badge feu",
+                "Badge gagné lorsque le joueur atteint l'arène de pierre",
+                champion = rival
+            )
+
+            println(badge.nom)
+
+        }
 /**
  * Change la couleur du message donné selon le nom de la couleur spécifié.
  * Cette fonction utilise les codes d'échappement ANSI pour appliquer une couleur à la sortie console. Si un nom de couleur
