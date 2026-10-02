@@ -13,7 +13,7 @@ class MonsterKube(
 
 ) : Item(id, nom, description), Utilisable {
 
-    fun utiliser(cible: IndividuMonstre) {
+    override fun utiliser(cible : IndividuMonstre) {
         print("Vous lancez le Monster Kube")
 
         if (cible.entraineur != null) {
